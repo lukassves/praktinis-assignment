@@ -1,56 +1,96 @@
-Practical Automation Task
+1\. Preparation
 
-Preparation
+Project Folder Location
 
 
 
 Copy the entire project folder to the following path:
 
+
+
 C:\\praktinis assignment\\...
 
-The folder structure must match this location exactly.
+
+
+
+
+The folder structure must match this location exactly for the automation logic to function correctly.
+
+
+
+Python Requirement
 
 
 
 Ensure that your computer has Python 3.13.7 installed.
 
-The project may also work on slightly older or newer Python versions, but 3.13.7 is recommended.
+The solution may also work on slightly older or newer Python versions, but 3.13.7 is recommended for compatibility.
 
 
 
-Power Automate Login
+2\. Power Automate Login
 
-Exporting or sharing flows is not allowed on personal Power Automate accounts.
 
-School or organization accounts allow exporting only with a Premium license.
 
-To run the flows, log in to Power Automate using the following credentials:
+Exporting or sharing flows is not supported on personal Power Automate accounts.
+
+Organization or school accounts allow exporting only with a Premium license.
+
+
+
+To run the flows included in this task, log in to Power Automate using the following credentials:
 
 
 
 Email: anonim46547@gmail.com
 
+
+
 Password: rpauzduotis
 
 
 
-Additional Information for Login:
-
-MS password: rpauzduotis1
+Additional Microsoft Account password (if prompted): rpauzduotis1
 
 
 
-If logging into the Power Automate Desktop app (available on Microsoft Store) is unsuccessful, there is a folder named "Power Automate" inside the project directory.
+If Power Automate Desktop Login Fails
 
-This folder contains all flow definitions. You can manually copy and paste the code into new subflows in Power Automate Desktop.
 
-Name each subflow according to the folder names provided.
+
+Inside the project directory, there is a folder named:
+
+
+
+Power Automate
+
+
+
+
+
+This folder contains all flow definitions in text form.
+
+If login is unsuccessful, manually recreate the flows:
+
+
+
+Create new flows/subflows in Power Automate Desktop.
+
+
+
+Copy the corresponding code from the folder.
+
+
+
+Name each subflow according to the folder names.
+
+
 
 Once the project folder is placed correctly and the Power Automate account is logged in, run the Parabank RPA flow.
 
 
 
-Overview of Flow Logic:
+3\. Overview of Flow Logic
 
 Main → clean\_folders
 
@@ -58,9 +98,15 @@ Main → clean\_folders
 
 Subflow: clean\_folders
 
+
+
 Terminates Notepad and Microsoft Excel processes.
 
+
+
 Deletes old report files from:
+
+
 
 C:\\praktinis assignment\\report
 
@@ -72,11 +118,17 @@ Main → read\_data
 
 Subflow: read\_data
 
-Supports handling multiple data files.
 
-Reads the file and assigns required values into a data table.
 
-After processing the file, the next step is:
+Supports processing multiple data files.
+
+
+
+Reads each file and assigns required values into a table.
+
+
+
+After completing data extraction, the next process is triggered:
 
 
 
@@ -84,17 +136,35 @@ read\_data → register\_to\_parabank
 
 
 
-During registration:
+Registration Logic
 
-The system registers the client; if the account already exists, it attempts to log in.
 
-After logging into the client account, the next step is:
+
+During the registration sequence:
+
+
+
+The system attempts to register a new client.
+
+
+
+If the client already exists, the system logs into the existing account.
+
+
+
+Once logged in, the next step is:
 
 
 
 register\_to\_parabank → loan\_submit
 
-If no accounts were registered, the sequence becomes:
+
+
+
+
+If new accounts were not registered in this iteration, the flow proceeds as:
+
+
 
 register\_to\_parabank → customer\_report → next client
 
@@ -102,9 +172,15 @@ register\_to\_parabank → customer\_report → next client
 
 Subflow: loan\_submit
 
-Opens a new bank account for the client.
 
-Sends a loan request.
 
-Moves on to the next client.
+Opens a bank account for the client.
+
+
+
+Submits a loan request.
+
+
+
+Moves on to the next client automatically.
 
