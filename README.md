@@ -1,39 +1,21 @@
 1\. Preparation
-
 Project Folder Location
 
 
 
 Copy the entire project folder to the following path:
-
-
-
 C:\\praktinis assignment\\
-
-
-
-
-
 The folder structure must match this location exactly for the automation logic to function correctly.
 
 
 
 Python Requirement
-
-
-
 Ensure that your computer has Python 3.13.7 installed.
-
-
-
 The solution may also work on slightly older or newer Python versions, but 3.13.7 is recommended for compatibility.
 
 
 
 2\. Power Automate Login
-
-
-
 Exporting or sharing flows is not supported on personal Power Automate accounts.
 
 Organization or school accounts allow exporting only with a Premium license.
