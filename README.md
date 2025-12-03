@@ -74,3 +74,4 @@ Opens a bank account for the client.
 Submits a loan request.
 Moves to the next client.
 
+Customer_report.py handles the client_report logic by getting the passed down data from Power Automate. 
